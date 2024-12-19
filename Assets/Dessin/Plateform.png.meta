@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2008776125e6c3c4588cde498ab6bef6
+guid: 06a8251ea45fb4341a7c3ba2b3ff242f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dague_proto_0
+      name: Plateform_0
       rect:
         serializedVersion: 2
-        x: 201
-        y: 513
-        width: 1356
-        height: 174
+        x: 0
+        y: 637
+        width: 1920
+        height: 443
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f633375b72ed2a44aa140394e92b3371
-      internalID: -1308350056
+      spriteID: 165d84ceecfb1f54a9a9f99e0fc8803c
+      internalID: -1529074999
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dague_proto_0: -1308350056
+      Plateform_0: -1529074999
+      Plateform_1: 365824261
+      Plateform_2: -686030037
+      Plateform_3: 445749260
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
