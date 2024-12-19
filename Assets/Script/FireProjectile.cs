@@ -11,13 +11,7 @@ public class FireProjectile : MonoBehaviour
     public ObjectPlacement objectFrom = ObjectPlacement.ProjectFiles;
     public float moveSpeed;
     Rigidbody2D body2D;
- 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-            Fire();
-    }
-
+    
     public void Fire()
     {
         if (objectFrom == ObjectPlacement.ProjectFiles)
