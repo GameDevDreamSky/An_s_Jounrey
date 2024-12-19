@@ -176,7 +176,7 @@ MonoBehaviour:
   contactWanted: 0
   layerFilter:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 4736
   specificTarget: {fileID: 0}
   eventsOnEnter:
     m_PersistentCalls:
