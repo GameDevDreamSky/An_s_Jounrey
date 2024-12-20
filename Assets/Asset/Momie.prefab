@@ -83,7 +83,7 @@ MonoBehaviour:
   contactWanted: 0
   layerFilter:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 128
   specificTarget: {fileID: 0}
   eventsOnEnter:
     m_PersistentCalls:
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 5274809460477969814}
   - component: {fileID: 1614910133188114772}
   m_Layer: 8
-  m_Name: Follow (1)
+  m_Name: Kill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,7 +510,8 @@ MonoBehaviour:
   followOneTarget: {fileID: 0}
   isInstantaneous: 0
   speedToTarget: 2
-  followPath: []
+  followPath:
+  - {fileID: 0}
   speed: 5
   precision: 0.2
   pathIsOpen: 0
