@@ -307,7 +307,7 @@ Transform:
   m_GameObject: {fileID: 6194916}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.15, y: 2.15, z: 0}
+  m_LocalPosition: {x: -2.15, y: 4, z: 0}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1495,7 +1495,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 739200891}
-          m_TargetAssemblyTypeName: FireProjectile, Assembly-CSharp
+          m_TargetAssemblyTypeName: FireProjectile_2, Assembly-CSharp
           m_MethodName: Fire
           m_Mode: 1
           m_Arguments:
@@ -1523,7 +1523,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   minPatterns: 1
-  attackCooldown: 6
+  attackCooldown: 8
 --- !u!212 &106360279
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1860,8 +1860,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168453519}
-  - component: {fileID: 168453520}
-  - component: {fileID: 168453521}
+  - component: {fileID: 168453523}
+  - component: {fileID: 168453526}
+  - component: {fileID: 168453525}
+  - component: {fileID: 168453524}
   m_Layer: 0
   m_Name: "Tir\xE9"
   m_TagString: Untagged
@@ -1884,22 +1886,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 171617259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &168453520
+--- !u!114 &168453523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168453518}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0dd8ca71bffdd74ca6d6391107721c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 989fc1686c4729f4197f936dfeec23f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balle: {fileID: 4227298769613119359, guid: 5359346f2e4842946a04a6d35e38a1b4, type: 3}
-  objectFrom: 0
-  moveSpeed: 20
---- !u!114 &168453521
+  timer: 0
+  displayUI: {fileID: 0}
+  displayTextMesh: {fileID: 0}
+  timeBeforeEvent: 0.25
+  timedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 168453526}
+        m_TargetAssemblyTypeName: FireProjectile_2, Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 168453523}
+        m_TargetAssemblyTypeName: Chrono, Assembly-CSharp
+        m_MethodName: ResetTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &168453524
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1912,14 +1942,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onKey: 324
-  pressType: 0
+  pressType: 2
   eventsOnKeyPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168453520}
-        m_TargetAssemblyTypeName: FireProjectile, Assembly-CSharp
-        m_MethodName: Fire
-        m_Mode: 1
+      - m_Target: {fileID: 168453523}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1928,6 +1958,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &168453525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168453518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a845b48ff810fe047b1bddcfb81cfad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onKey: 324
+  pressType: 1
+  eventsOnKeyPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 168453523}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &168453526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168453518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f1b97e237f46d4fbf765b5ff297a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balle: {fileID: 4227298769613119359, guid: 5359346f2e4842946a04a6d35e38a1b4, type: 3}
+  objectFrom: 0
+  moveSpeed: 10
 --- !u!1 &171617257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,7 +2019,6 @@ GameObject:
   - component: {fileID: 171617263}
   - component: {fileID: 171617261}
   - component: {fileID: 171617267}
-  - component: {fileID: 171617268}
   - component: {fileID: 171617269}
   m_Layer: 7
   m_Name: Player
@@ -1967,7 +2040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  jumpingPower: 15
+  jumpingPower: 10
   rb: {fileID: 171617260}
   groundCheck: {fileID: 698112584}
   groundLayer:
@@ -2027,7 +2100,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171617257}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a845b48ff810fe047b1bddcfb81cfad4, type: 3}
   m_Name: 
@@ -2244,26 +2317,6 @@ MonoBehaviour:
       m_Calls: []
   eventOnAdd:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &171617268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171617257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35450d418eff0db4ebe133bd7fcc1af2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contactWanted: 0
-  layerFilter:
-    serializedVersion: 2
-    m_Bits: 256
-  specificTarget: {fileID: 0}
-  eventsOnEnter:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 623010372}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -2277,12 +2330,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  eventsOnStay:
-    m_PersistentCalls:
-      m_Calls: []
-  eventsOnExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &171617269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2941,7 +2988,7 @@ Transform:
   m_GameObject: {fileID: 267366659}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.15, y: 7.7, z: 0}
+  m_LocalPosition: {x: -8.15, y: 8, z: 0}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4566,9 +4613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0dd8ca71bffdd74ca6d6391107721c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balle: {fileID: 2598907223125614585, guid: 41477f9b6a409cf4e93c64e358c94f64, type: 3}
-  objectFrom: 0
-  moveSpeed: -10
 --- !u!4 &528722443
 Transform:
   m_ObjectHideFlags: 0
@@ -4687,7 +4731,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 739200891}
-          m_TargetAssemblyTypeName: FireProjectile, Assembly-CSharp
+          m_TargetAssemblyTypeName: FireProjectile_2, Assembly-CSharp
           m_MethodName: Fire
           m_Mode: 1
           m_Arguments:
@@ -4715,7 +4759,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   minPatterns: 1
-  attackCooldown: 6
+  attackCooldown: 8
 --- !u!212 &542581697
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5160,7 +5204,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7490196}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.7490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5180,7 +5224,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 776743618}
@@ -5508,7 +5552,7 @@ Transform:
   m_GameObject: {fileID: 672433055}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.15, y: 2.15, z: 0}
+  m_LocalPosition: {x: -14.15, y: 0, z: 0}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6902,7 +6946,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.61345816, b: 0, a: 0.7490196}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.7490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6922,7 +6966,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1072773228}
@@ -6968,7 +7012,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 739200889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0dd8ca71bffdd74ca6d6391107721c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 00f1b97e237f46d4fbf765b5ff297a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   balle: {fileID: 2598907223125614585, guid: 41477f9b6a409cf4e93c64e358c94f64, type: 3}
@@ -7356,7 +7400,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.61345816, b: 0, a: 0.7490196}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.7490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7376,7 +7420,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1475660757}
@@ -8278,7 +8322,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.7490196}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8599,7 +8643,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7490196}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.7490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8619,7 +8663,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1072773228}
@@ -8917,7 +8961,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2008806001}
-          m_TargetAssemblyTypeName: FireProjectile, Assembly-CSharp
+          m_TargetAssemblyTypeName: FireProjectile_2, Assembly-CSharp
           m_MethodName: Fire
           m_Mode: 1
           m_Arguments:
@@ -8945,7 +8989,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   minPatterns: 1
-  attackCooldown: 6
+  attackCooldown: 8
 --- !u!212 &937088283
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9334,7 +9378,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.7490196}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9461,8 +9505,8 @@ MonoBehaviour:
     patternAction:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1308346497}
-          m_TargetAssemblyTypeName: FireProjectile, Assembly-CSharp
+        - m_Target: {fileID: 1308346499}
+          m_TargetAssemblyTypeName: FireProjectile_2, Assembly-CSharp
           m_MethodName: Fire
           m_Mode: 1
           m_Arguments:
@@ -9490,7 +9534,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   minPatterns: 1
-  attackCooldown: 6
+  attackCooldown: 8
 --- !u!212 &981940923
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11075,8 +11119,8 @@ MonoBehaviour:
     patternAction:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1308346497}
-          m_TargetAssemblyTypeName: FireProjectile, Assembly-CSharp
+        - m_Target: {fileID: 1308346499}
+          m_TargetAssemblyTypeName: FireProjectile_2, Assembly-CSharp
           m_MethodName: Fire
           m_Mode: 1
           m_Arguments:
@@ -11104,7 +11148,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   minPatterns: 1
-  attackCooldown: 6
+  attackCooldown: 8
 --- !u!212 &1097501959
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11853,7 +11897,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7490196}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.7490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11873,7 +11917,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1475660757}
@@ -12311,7 +12355,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.61345816, b: 0, a: 0.7490196}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.7490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12331,7 +12375,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 776743618}
@@ -12694,7 +12738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1308346498}
-  - component: {fileID: 1308346497}
+  - component: {fileID: 1308346499}
   m_Layer: 8
   m_Name: Attaque Tire Haut
   m_TagString: Untagged
@@ -12702,21 +12746,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1308346497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308346496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0dd8ca71bffdd74ca6d6391107721c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  balle: {fileID: 2598907223125614585, guid: 41477f9b6a409cf4e93c64e358c94f64, type: 3}
-  objectFrom: 0
-  moveSpeed: -10
 --- !u!4 &1308346498
 Transform:
   m_ObjectHideFlags: 0
@@ -12732,6 +12761,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1493941439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1308346499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308346496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f1b97e237f46d4fbf765b5ff297a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balle: {fileID: 2598907223125614585, guid: 41477f9b6a409cf4e93c64e358c94f64, type: 3}
+  objectFrom: 0
+  moveSpeed: -10
 --- !u!1 &1308567933
 GameObject:
   m_ObjectHideFlags: 0
@@ -13541,7 +13585,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2008806001}
-          m_TargetAssemblyTypeName: FireProjectile, Assembly-CSharp
+          m_TargetAssemblyTypeName: FireProjectile_2, Assembly-CSharp
           m_MethodName: Fire
           m_Mode: 1
           m_Arguments:
@@ -13569,7 +13613,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   minPatterns: 1
-  attackCooldown: 6
+  attackCooldown: 8
 --- !u!212 &1334916754
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14465,7 +14509,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2008806001}
-          m_TargetAssemblyTypeName: FireProjectile, Assembly-CSharp
+          m_TargetAssemblyTypeName: FireProjectile_2, Assembly-CSharp
           m_MethodName: Fire
           m_Mode: 1
           m_Arguments:
@@ -14493,7 +14537,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   minPatterns: 1
-  attackCooldown: 6
+  attackCooldown: 8
 --- !u!212 &1443349125
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14704,9 +14748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0dd8ca71bffdd74ca6d6391107721c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balle: {fileID: 2598907223125614585, guid: 41477f9b6a409cf4e93c64e358c94f64, type: 3}
-  objectFrom: 0
-  moveSpeed: -10
 --- !u!4 &1463639002
 Transform:
   m_ObjectHideFlags: 0
@@ -14871,7 +14912,7 @@ Transform:
   m_GameObject: {fileID: 1475660755}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 0, z: 0}
+  m_LocalPosition: {x: -9.51, y: 0, z: 0}
   m_LocalScale: {x: 7, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15303,7 +15344,7 @@ Transform:
   m_GameObject: {fileID: 1528229178}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.15, y: 7.7, z: 0}
+  m_LocalPosition: {x: -2.15, y: 6, z: 0}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16744,7 +16785,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.7490196}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16901,8 +16942,8 @@ MonoBehaviour:
     patternAction:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1308346497}
-          m_TargetAssemblyTypeName: FireProjectile, Assembly-CSharp
+        - m_Target: {fileID: 1308346499}
+          m_TargetAssemblyTypeName: FireProjectile_2, Assembly-CSharp
           m_MethodName: Fire
           m_Mode: 1
           m_Arguments:
@@ -16930,7 +16971,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   minPatterns: 1
-  attackCooldown: 6
+  attackCooldown: 8
 --- !u!212 &1716660137
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17091,7 +17132,7 @@ Transform:
   m_GameObject: {fileID: 1724655936}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.15, y: 2.15, z: 0}
+  m_LocalPosition: {x: -8.15, y: 2, z: 0}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19182,7 +19223,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 739200891}
-          m_TargetAssemblyTypeName: FireProjectile, Assembly-CSharp
+          m_TargetAssemblyTypeName: FireProjectile_2, Assembly-CSharp
           m_MethodName: Fire
           m_Mode: 1
           m_Arguments:
@@ -19210,7 +19251,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   minPatterns: 1
-  attackCooldown: 6
+  attackCooldown: 8
 --- !u!212 &1941408505
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19517,7 +19558,7 @@ Transform:
   m_GameObject: {fileID: 1994794932}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.15, y: 7.7, z: 0}
+  m_LocalPosition: {x: -14.15, y: 10, z: 0}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19756,7 +19797,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2008805999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0dd8ca71bffdd74ca6d6391107721c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 00f1b97e237f46d4fbf765b5ff297a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   balle: {fileID: 2598907223125614585, guid: 41477f9b6a409cf4e93c64e358c94f64, type: 3}

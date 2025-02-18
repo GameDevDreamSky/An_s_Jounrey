@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class FireProjectile : MonoBehaviour
+public class FireProjectile_2 : MonoBehaviour
 {
     public enum ObjectPlacement
     {
@@ -11,7 +11,7 @@ public class FireProjectile : MonoBehaviour
     public ObjectPlacement objectFrom = ObjectPlacement.ProjectFiles;
     public float moveSpeed;
     Rigidbody2D body2D;
-    
+ 
     public void Fire()
     {
         if (objectFrom == ObjectPlacement.ProjectFiles)
