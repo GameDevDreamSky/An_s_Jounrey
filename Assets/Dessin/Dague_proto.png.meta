@@ -113,10 +113,10 @@ TextureImporter:
       name: Dague_proto_0
       rect:
         serializedVersion: 2
-        x: 201
-        y: 513
-        width: 1356
-        height: 174
+        x: 513
+        y: 201
+        width: 174
+        height: 1356
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
