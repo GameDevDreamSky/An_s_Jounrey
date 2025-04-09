@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 917802369013312228}
   - component: {fileID: 4233820815836506649}
-  - component: {fileID: 5260560558793629013}
   - component: {fileID: 676839185301480804}
-  - component: {fileID: 6869239322292414407}
+  - component: {fileID: 8152572817510467340}
+  - component: {fileID: 8497837516500192385}
+  - component: {fileID: 2925228965686169357}
   m_Layer: 12
   m_Name: Tire 1
   m_TagString: Untagged
@@ -87,33 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &5260560558793629013
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4227298769613119359}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!70 &676839185301480804
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -147,9 +121,36 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2, y: 14}
-  m_Direction: 0
---- !u!114 &6869239322292414407
+  m_Size: {x: 14, y: 2}
+  m_Direction: 1
+--- !u!50 &8152572817510467340
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227298769613119359}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &8497837516500192385
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,8 +159,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 4227298769613119359}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dd5b5dedb520c84e8846676c9160960, type: 3}
+  m_Script: {fileID: 11500000, guid: 989fc1686c4729f4197f936dfeec23f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  LifeTime: 3
+  timer: 0
+  displayUI: {fileID: 0}
+  displayTextMesh: {fileID: 0}
+  timeBeforeEvent: 5
+  timedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2925228965686169357}
+        m_TargetAssemblyTypeName: Destroy, Assembly-CSharp
+        m_MethodName: DestroyNow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2925228965686169357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227298769613119359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3050be86aca0068479dbf5af2a463f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
