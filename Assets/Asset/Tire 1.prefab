@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8152572817510467340}
   - component: {fileID: 8497837516500192385}
   - component: {fileID: 2925228965686169357}
+  - component: {fileID: 5415656062661282273}
   m_Layer: 12
   m_Name: Tire 1
   m_TagString: Untagged
@@ -193,3 +194,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3050be86aca0068479dbf5af2a463f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5415656062661282273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227298769613119359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35450d418eff0db4ebe133bd7fcc1af2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactWanted: 0
+  layerFilter:
+    serializedVersion: 2
+    m_Bits: 256
+  specificTarget: {fileID: 0}
+  eventsOnEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2925228965686169357}
+        m_TargetAssemblyTypeName: Destroy, Assembly-CSharp
+        m_MethodName: DestroyNow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  eventsOnStay:
+    m_PersistentCalls:
+      m_Calls: []
+  eventsOnExit:
+    m_PersistentCalls:
+      m_Calls: []
