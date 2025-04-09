@@ -434,7 +434,9 @@ GameObject:
   - component: {fileID: 18993846}
   - component: {fileID: 18993844}
   - component: {fileID: 18993845}
-  m_Layer: 0
+  - component: {fileID: 18993848}
+  - component: {fileID: 18993847}
+  m_Layer: 3
   m_Name: Plateforme_Mouv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,6 +588,70 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!251 &18993847
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18993842}
+  m_Enabled: 0
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 160
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!61 &18993848
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18993842}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 4.43}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19, y: 4}
+  m_EdgeRadius: 0
 --- !u!1 &26077661
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,6 +804,7 @@ GameObject:
   - component: {fileID: 34386107}
   - component: {fileID: 34386106}
   - component: {fileID: 34386105}
+  - component: {fileID: 34386109}
   m_Layer: 0
   m_Name: Camera (1)
   m_TagString: MainCamera
@@ -828,11 +895,11 @@ Camera:
     y: 0
     width: 2.13
     height: 0.77
-  near clip plane: 4.4
-  far clip plane: 999.92
+  near clip plane: 0
+  far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 17
+  orthographic size: 6
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -863,6 +930,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &34386109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34386104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3deb81347b786814492d119f18aaa13e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followOneTarget: {fileID: 171617259}
+  isInstantaneous: 0
+  speedToTarget: 1
+  followPath: []
+  speed: 5
+  precision: 0.2
+  pathIsOpen: 0
 --- !u!1 &36262506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,7 +2716,7 @@ GameObject:
   - component: {fileID: 259246051}
   - component: {fileID: 259246053}
   - component: {fileID: 259246052}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plateforme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10766,7 +10852,7 @@ GameObject:
   - component: {fileID: 1087821899}
   - component: {fileID: 1087821901}
   - component: {fileID: 1087821900}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AAAAAAHHHHH1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12477,7 +12563,7 @@ GameObject:
   - component: {fileID: 1275039671}
   - component: {fileID: 1275039673}
   - component: {fileID: 1275039672}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Vie1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14911,7 +14997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1443064821}
   - component: {fileID: 1443064822}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Vie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19680,7 +19766,7 @@ Transform:
   m_GameObject: {fileID: 1994794932}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.15, y: 11, z: 0}
+  m_LocalPosition: {x: -14.15, y: 12, z: 0}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20209,7 +20295,7 @@ GameObject:
   - component: {fileID: 2103545619}
   - component: {fileID: 2103545618}
   - component: {fileID: 2103545617}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AAAAAAHHHHH1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20946,6 +21032,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3947961122634184410, guid: e6e454d757734e747b370e59d6cf7f7b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4165427653564653317, guid: e6e454d757734e747b370e59d6cf7f7b, type: 3}
       propertyPath: followOneTarget
       value: 
